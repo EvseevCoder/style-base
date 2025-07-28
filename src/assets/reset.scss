@@ -1,0 +1,127 @@
+@use 'sass:map';
+@use '@/assets/_variables.scss' as *;
+@use '@/assets/_mixins.scss' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    min-height: 1vw;
+    font-size: calc(100vw / 1920 * 10);
+
+
+    @include screen-to(tablet) {
+        font-size: calc(100vw / 1280 * 10);
+    }
+
+    @include screen-to(mobile) {
+        font-size: calc(100vw / 767 * 10);
+    }
+}
+
+body {
+    overflow-y: scroll;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-family: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input {
+    outline: none;
+
+    &[type="number"]::-webkit-inner-spin-button,
+    &[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    &[disabled],
+    fieldset[disabled] {
+        opacity: 1;
+    }
+
+    &::-ms-clear {
+        display: none;
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+pre,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-size: initial;
+    font-weight: normal;
+}
+
+address {
+    font-style: normal;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+button {
+    padding: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: inherit;
+    cursor: pointer;
+}

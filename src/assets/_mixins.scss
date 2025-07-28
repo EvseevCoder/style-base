@@ -1,0 +1,37 @@
+@use 'sass:map';
+@use '@/assets/_variables.scss' as *;
+
+@mixin screen-to($name) {
+    $max: map.get($breakpoints, $name);
+
+    @if $max {
+        @media only screen and (max-width: $max) {
+            @content;
+        }
+    } @else {
+        @content;
+    }
+}
+
+@mixin font($alias, $name, $weight) {
+    @font-face {
+        font-family: $alias;
+        src: url("~/assets/fonts/" + $name + ".woff2") format("woff2");
+        font-weight: $weight;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@mixin hover {
+    @media (hover), (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+@mixin setSize($width: auto,$height: auto) {
+    width: $width;
+    height: $height;
+}
