@@ -11,7 +11,6 @@ html {
     min-height: 1vw;
     font-size: calc(100vw / 1920 * 10);
 
-
     @include screen-to(tablet) {
         font-size: calc(100vw / 1280 * 10);
     }
@@ -57,17 +56,15 @@ textarea {
     background-color: transparent;
     outline: none;
     font-family: inherit;
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
 }
 
 input {
     outline: none;
 
-    &[type="number"]::-webkit-inner-spin-button,
-    &[type="number"]::-webkit-outer-spin-button {
-        -webkit-appearance: none;
+    &[type='number']::-webkit-inner-spin-button,
+    &[type='number']::-webkit-outer-spin-button {
+        appearance: none;
         margin: 0;
     }
 
@@ -103,7 +100,9 @@ address {
 
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
-    transition: background-color 600000s 0s, color 600000s 0s;
+    transition:
+        background-color 600000s 0s,
+        color 600000s 0s;
 }
 
 figure {
