@@ -1,36 +1,13 @@
 <script setup>
+    import AdaptiveCube from '@/components/AdaptiveCube.vue';
+    import Counter from '@/components/Counter.vue';
 </script>
 
 <template>
-    <div class="base">
-        <h1>Это адаптивный куб</h1>
-
-        <div class="cube"></div>
-    </div>
+    <AdaptiveCube />
+    <Counter />
 </template>
 
 <style scoped lang="scss">
-    .base {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        flex: 1;
 
-        h1 {
-            font-size: 5rem;
-            margin-bottom: 5rem;
-        }
-    }
-
-    .cube {
-        background-color: red;
-
-        @include setSize(57rem, 32rem);
-
-        @include respond-to(tablet) {
-            @include setSize(57rem, 32rem);
-        }
-    }
 </style>
